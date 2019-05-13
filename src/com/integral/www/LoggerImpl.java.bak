@@ -1,0 +1,18 @@
+package com.integral.www;
+
+import java.io.File;
+
+public class LoggerImpl implements Runnable{
+
+	String message = "";
+	public LoggerImpl(String message)
+	{
+		this.message = message;
+	}
+	@Override
+	public void run() {
+			Logger logger = new Logger();
+			logger.log(new File("logger.txt"), this.message);
+	}
+
+}

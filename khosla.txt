@@ -1,0 +1,9 @@
+Type:Employee
+name,age,salary
+Ashok,36,20000
+Kishor,30,15000
+Bharath,25,30000
+Type:Department
+code,name
+acc,accounts
+prl,payroll

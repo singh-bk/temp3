@@ -1,0 +1,116 @@
+package com.saplabs.www;
+
+public class SnakeLadder {
+
+	SnakeLadderNode[] grid = new SnakeLadderNode[100];
+	
+	public SnakeLadder(){
+		grid[0] = new SnakeLadderNode(false, false);
+		grid[1] = new SnakeLadderNode(false, false);
+		grid[2] = new SnakeLadderNode(false, false);
+		grid[3] = new SnakeLadderNode(false, true, -1, 13);
+		grid[4] = new SnakeLadderNode(false, false);
+		grid[5] = new SnakeLadderNode(false, false);
+		grid[6] = new SnakeLadderNode(false, false);
+		grid[7] = new SnakeLadderNode(false, false);
+		grid[8] = new SnakeLadderNode(false, true, -1, 30);
+		grid[9] = new SnakeLadderNode(false, false);
+		grid[10] = new SnakeLadderNode(false, false);
+		grid[11] = new SnakeLadderNode(false, false);
+		grid[12] = new SnakeLadderNode(false, false);
+		grid[13] = new SnakeLadderNode(false, false);
+		grid[14] = new SnakeLadderNode(false, false);
+		grid[15] = new SnakeLadderNode(false, false);
+		grid[16] = new SnakeLadderNode(true, false, 6, -1);
+		grid[17] = new SnakeLadderNode(false, false);
+		grid[18] = new SnakeLadderNode(false, false);
+		grid[19] = new SnakeLadderNode(false, true, -1, 37);
+		grid[20] = new SnakeLadderNode(false, false);
+		grid[21] = new SnakeLadderNode(false, false);
+		grid[22] = new SnakeLadderNode(false, false);
+		grid[23] = new SnakeLadderNode(false, false);
+		grid[24] = new SnakeLadderNode(false, false);
+		grid[24] = new SnakeLadderNode(false, false);
+		grid[25] = new SnakeLadderNode(false, false);
+		grid[26] = new SnakeLadderNode(false, false);
+		grid[27] = new SnakeLadderNode(false, true, -1, 83);
+		grid[28] = new SnakeLadderNode(false, false);
+		grid[28] = new SnakeLadderNode(false, false);
+		grid[29] = new SnakeLadderNode(false, false);
+		grid[30] = new SnakeLadderNode(false, false);
+		grid[31] = new SnakeLadderNode(false, false);
+		grid[31] = new SnakeLadderNode(false, false);
+		grid[32] = new SnakeLadderNode(false, false);
+		grid[33] = new SnakeLadderNode(false, false);
+		grid[34] = new SnakeLadderNode(false, false);
+		grid[35] = new SnakeLadderNode(false, false);
+		grid[36] = new SnakeLadderNode(false, false);
+		grid[37] = new SnakeLadderNode(false, false);
+		grid[38] = new SnakeLadderNode(false, false);
+		grid[39] = new SnakeLadderNode(false, true, -1, 58);
+		grid[40] = new SnakeLadderNode(false, false);
+		grid[41] = new SnakeLadderNode(false, false);
+		grid[42] = new SnakeLadderNode(false, false);
+		grid[43] = new SnakeLadderNode(false, false);
+		grid[44] = new SnakeLadderNode(false, false);
+		grid[45] = new SnakeLadderNode(false, false);
+		grid[46] = new SnakeLadderNode(false, false);
+		grid[47] = new SnakeLadderNode(false, false);
+		grid[48] = new SnakeLadderNode(false, false);
+		grid[49] = new SnakeLadderNode(false, false);
+		grid[50] = new SnakeLadderNode(false, true, -1, 66);
+		grid[51] = new SnakeLadderNode(false, false);
+		grid[52] = new SnakeLadderNode(false, false);
+		grid[53] = new SnakeLadderNode(true, false, 33, -1);
+		grid[54] = new SnakeLadderNode(false, false);
+		grid[55] = new SnakeLadderNode(false, false);
+		grid[56] = new SnakeLadderNode(false, false);
+		grid[57] = new SnakeLadderNode(false, false);
+		grid[58] = new SnakeLadderNode(false, false);
+		grid[59] = new SnakeLadderNode(false, false);
+		grid[60] = new SnakeLadderNode(false, false);
+		grid[61] = new SnakeLadderNode(true, false, 18, -1);
+		grid[62] = new SnakeLadderNode(false, true, -1, 80);
+		grid[63] = new SnakeLadderNode(true, false, 59, -1);
+		grid[64] = new SnakeLadderNode(false, false);
+		grid[65] = new SnakeLadderNode(false, false);
+		grid[66] = new SnakeLadderNode(false, false);
+		grid[67] = new SnakeLadderNode(false, false);
+		grid[68] = new SnakeLadderNode(false, false);
+		grid[69] = new SnakeLadderNode(false, false);
+		grid[70] = new SnakeLadderNode(false, true, -1, 90);
+		grid[71] = new SnakeLadderNode(false, false);
+		grid[72] = new SnakeLadderNode(false, false);
+		grid[73] = new SnakeLadderNode(false, false);
+		grid[74] = new SnakeLadderNode(false, false);
+		grid[75] = new SnakeLadderNode(false, false);
+		grid[76] = new SnakeLadderNode(false, false);
+		grid[77] = new SnakeLadderNode(false, false);
+		grid[78] = new SnakeLadderNode(false, false);
+		grid[79] = new SnakeLadderNode(false, false);
+		grid[80] = new SnakeLadderNode(false, false);
+		grid[81] = new SnakeLadderNode(false, false);
+		grid[82] = new SnakeLadderNode(false, false);
+		grid[83] = new SnakeLadderNode(false, false);
+		grid[84] = new SnakeLadderNode(false, false);
+		grid[85] = new SnakeLadderNode(false, false);
+		grid[86] = new SnakeLadderNode(true, false, 23, -1);
+		grid[87] = new SnakeLadderNode(false, false);
+		grid[88] = new SnakeLadderNode(false, false);
+		grid[89] = new SnakeLadderNode(false, false);
+		grid[90] = new SnakeLadderNode(false, false);
+		grid[91] = new SnakeLadderNode(false, false);
+		grid[92] = new SnakeLadderNode(true, false, 72, -1);
+		grid[93] = new SnakeLadderNode(false, false);
+		grid[94] = new SnakeLadderNode(true, false, 74, -1);
+		grid[95] = new SnakeLadderNode(false, false);
+		grid[96] = new SnakeLadderNode(false, false);
+		grid[97] = new SnakeLadderNode(false, false);
+		grid[98] = new SnakeLadderNode(true, false, 77, -1);
+		grid[99] = new SnakeLadderNode(false, false);
+	}
+	
+	public SnakeLadderNode[] getGrid(){
+		return this.grid;
+	}
+}

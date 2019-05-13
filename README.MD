@@ -41,3 +41,5 @@ https://www.baeldung.com/java-concurrent-locks
 https://medium.com/@itsromiljain/curious-case-of-concurrenthashmap-90249632d335
 
 http://sophiafeng.com/2013/11/21/lru-cache-implementation-by-linkedhashmap-leetcode/
+
+https://www.baeldung.com/java-blocking-queue

@@ -12,5 +12,6 @@ public class CustomQueueTest {
 		queue.dequeue();
 		queue.print();
 	}
+	
 }
 

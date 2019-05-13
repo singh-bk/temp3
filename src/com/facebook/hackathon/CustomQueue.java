@@ -13,8 +13,8 @@ public class CustomQueue<E> {
 	private Node<E> head;
 	private Node<E> tail;
 	
-	private ReentrantLock putLock = new ReentrantLock();
-	private ReentrantLock getLock = new ReentrantLock();
+	private ReentrantLock headLock = new ReentrantLock();
+	private ReentrantLock tailLock = new ReentrantLock();
 	
 	public CustomQueue(int capacity) {
 		QUEUE_CAPACITY = capacity;
@@ -28,15 +28,17 @@ public class CustomQueue<E> {
 		} else {
 			Node<E> elem = new Node<E>(element);
 			if(size.get() == 0){
-				putLock.lock();
+				headLock.lock();
+				tailLock.lock();
 				tail = elem;
 				head = elem;
-				putLock.unlock();
+				headLock.unlock();
+				tailLock.unlock();
 			}else{
-				putLock.lock();
+				tailLock.lock();
 				tail.next = elem;
 				tail = elem;
-				putLock.unlock();
+				tailLock.unlock();
 			}
 			size.getAndIncrement();
 			return true;
@@ -48,9 +50,11 @@ public class CustomQueue<E> {
 			System.out.println("The queue is empty");
 			return null;
 		} else {
+			headLock.lock();
 			Node<E> node = head;
 			head = head.next;
 			size.getAndDecrement();
+			headLock.unlock();
 			return node.item;
 		}
 	}

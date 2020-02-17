@@ -30,7 +30,7 @@ public class BinarySearchTree {
 	
 	public void insertRight(TreeNode node, int data)
 	{
-		TreeNode right = node.getRightNode();
+		final TreeNode right = node.getRightNode();
 		if(right == null)
 		{
 			node.setRightNode(new TreeNode(data,null,null));
@@ -51,7 +51,7 @@ public class BinarySearchTree {
 	
 	public void insertLeft(TreeNode node, int data)
 	{
-		TreeNode left = node.getLeftNode();
+		final TreeNode left = node.getLeftNode();
 		if(left == null)
 		{
 			node.setLeftNode(new TreeNode(data,null,null));
@@ -100,9 +100,14 @@ public class BinarySearchTree {
 	 * @param value
 	 * @return
 	 */
+	
+	public void searchAndPrintParent(int value) {
+	    
+	}
+	
 	public List<TreeNode> getAncestors(int value)
 	{
-		List<TreeNode> ancestors = new LinkedList<TreeNode>();
+		final List<TreeNode> ancestors = new LinkedList<TreeNode>();
 		if(value==this.root.getData())
 		{
 			System.out.println("This is a root");
@@ -198,7 +203,7 @@ public class BinarySearchTree {
 			}
 			else if(node.getLeftNode() != null && node.getRightNode() == null)
 			{
-				TreeNode child = node.getLeftNode();
+				final TreeNode child = node.getLeftNode();
 				if(parent.getLeftNode().equals(node))
 				{
 					parent.setLeftNode(child);
@@ -210,7 +215,7 @@ public class BinarySearchTree {
 			}
 			else if(node.getLeftNode() == null && node.getRightNode() != null)
 			{
-				TreeNode child = node.getRightNode();
+				final TreeNode child = node.getRightNode();
 				if(parent.getLeftNode().equals(node))
 				{
 					parent.setLeftNode(child);
